@@ -15,7 +15,10 @@ public class JokeControler {
 	
 	@RequestMapping({"/",""})
 	public String showJoke(Model model) {
-		model.addAttribute("joke",jokeService.getJoke());
+		String joke = jokeService.getJoke();
+		model.addAttribute("joke",joke);
+		System.out.println(joke);
 		return "chucknorris";
 	}
+	
 }
